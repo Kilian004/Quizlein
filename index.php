@@ -18,7 +18,8 @@
 				<th><input passwort="Passwort"></th>
 			</tr>
 			<tr>
-				<th><input type="submit" value="klick mich" onclick="<?php ?>" ></th>	
+				<th><input type="reset"></th>
+				<th><input type="submit" value="Bestätigen" onclick="<?php ?>" ></th>
 			</tr>
 			<tr>
 				<th>Registrieren</th>
@@ -28,4 +29,3 @@
 		</form>
 	</body>
 </html>
-<!--<?php $benutzername = $_POST["Benutzername:"]; ?><?php $passwort = $_POST["Passwort

@@ -30,7 +30,7 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 			<button><a type="button" class="button" href="spielerliste.php">Spielerliste</a></button>
 			<button><a type="button" class="button" href="verwaltung.php">Verwaltung</a></button>
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
-			<button><a type="button" class="button">Abmelden</a></button>
+			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
 		<table>
 			<tr>

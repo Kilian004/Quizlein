@@ -15,7 +15,7 @@ $user = $_SESSION['aktueller_benutzer'];
 	</head>
 	
 	<body>
-	<h1>Quizlein</h1>
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
 		<table>
 			<tr>
 				
@@ -29,7 +29,7 @@ $user = $_SESSION['aktueller_benutzer'];
 			<button><a type="button" class="button" href="spielerliste.php">Spielerliste</a></button>
 			<button><a type="button" class="button" href="verwaltung.php">Verwaltung</a></button>
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
-			<button><a type="button" class="button" href="index.php">Abmelden<a/></button>
+			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
 	</body>
 	

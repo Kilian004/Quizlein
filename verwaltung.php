@@ -20,4 +20,4 @@ header('Location: keineRechte.php'); //weiterleiten auf KeineRechte
 	</head>
 	<body>
 	</body
-</html>
+ </html>

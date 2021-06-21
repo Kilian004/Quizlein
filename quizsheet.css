@@ -25,6 +25,40 @@ h1{ color: white ;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  
+}
+circle-button{
+	position: absolute;
+    left: 1100px;
+    top: 50px;
+    display:block;
+    width:80px;
+    height:80px;
+    line-height:80px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color: white;
+    text-align:center;
+    text-decoration:none;
+    background: #ff6961;
+	background-width:10%;
+	background-height: auto;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+td{
+	color: white;
+	text-align: center;
+	
+}
+h2{
+	font-size:40px;
+	font-family: Perfect Dark Zero;
+	color: #ff6961;
+}
+h3{
+	color: white;
 }
 
 .echo {

@@ -17,9 +17,11 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 	</head>
 	
 	<body>
+	<h1>Quizlein</h1>
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
 		<table>
 			<tr>
-				<td><h1>Quizlein</h1> </td>
+				
 				<td><button id=profil><a href="profil.php"><?php echo $user ?></a></button></td>
 			</tr>
 		</table>
@@ -30,15 +32,16 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 			<button><a type="button" class="button" href="spielerliste.php">Spielerliste</a></button>
 			<button><a type="button" class="button" href="verwaltung.php">Verwaltung</a></button>
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
-			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
+			<button><a type="button" class="button">Abmelden</a></button>
 		</div>
 		<table>
 			<tr>
-				<td>Name: ...........................</td>
+			</br></br></br></br>
+				<td>Name: ...........................</td> 
 				<td><?php echo $user ?></td> <!-- Benutzername wird ausgegeben --> 
 			</tr>	
 			<tr>
-				<td>Platzierung: ..................</td>
+				<td>Platzierung:</br> ..................</td>
 				<td>
 					<?php //Platzierung wird ermittelt
 						$sql="SELECT Count(Benutzername)+1 FROM benutzer WHERE punkte>(SELECT Punkte from benutzer where Benutzername='$user')";
@@ -50,7 +53,7 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Punkte: .........................</td>
+				<td>Punkte: ...........................</td>
 				<td>
 					<?php //Punkte werden ermittelt
 						$sql="SELECT Punkte FROM benutzer WHERE Benutzername='$user'";
@@ -62,14 +65,14 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Beste Punkte: ...............</td>
+				<td>Beste Punkte: ..................</td>
 				<td>
 					test 1
 				<!--Hier kommt noch was-->
 				</td>
 			</tr>
 			<tr>
-				<td>Rechte: .........................</td>
+				<td>Rechte: ...........................</td>
 				<td>
 					<?php 
 						$sql="SELECT Benutzername FROM admin WHERE Benutzername='$user'";
@@ -89,7 +92,7 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Erstellte Fragen: ...........</td>
+				<td>Erstellte Fragen: ..................</td>
 				<td>
 					<?php //Fragenanzahl wird ermittelt
 						$sql="SELECT Count(Inhalt) FROM frage WHERE Benutzername='$user'";
@@ -100,7 +103,7 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Beliebteste Frage: .........</td>
+				<td>Beliebteste Frage: </td>
 				<td>
 					test 2
 				<!--Hier kommt noch was-->

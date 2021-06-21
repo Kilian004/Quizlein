@@ -16,6 +16,7 @@ $user = $_SESSION['aktueller_benutzer'];
 	
 	<body>
 	<h1>Quizlein</h1>
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
 		<table>
 			<tr>
 				

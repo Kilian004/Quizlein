@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="de">
-<td><h1>ERROR</h1> </td> 
-<th>Du hast keine Rechte um auf diese Seite zuzugreifen</th>
+<link rel="stylesheet" href="quizsheet.css">
+<td><h2>ERROR</h2> </td> 
+
+<th><h3>Du hast keine Rechte um auf diese Seite zuzugreifen</h3></th>
 <br> </br>
-<button><a href="startseite.php">Zurück zur Startseite</a></button>
+<button><a type="button" class="button" href="startseite.php">Zurück zur Startseite</a></button>

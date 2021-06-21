@@ -1,11 +1,11 @@
-<?php
+ <?php
 session_start();
 //überprüfen ob schon angemeldet
 if(!isset($_SESSION['aktueller_benutzer'])) {
     die('Bitte zuerst <a href="index.php">einloggen</a>');
 }
 $user = $_SESSION['aktueller_benutzer'];//Name des angemeldeten Benutzers wird gespeichert
-?>
+?> 
 
 <!doctype html>
 <html lang="de">
@@ -16,6 +16,7 @@ $user = $_SESSION['aktueller_benutzer'];//Name des angemeldeten Benutzers wird g
 	</head>
 	<body>
 	<h1>Quizlein</h1> 
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
 	<!- Passender Hintergrund
 		Überschrift in die Mitte / Passende Frabe
 		Passende FrabePassende Schriftfarbe

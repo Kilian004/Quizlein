@@ -1,8 +1,6 @@
 <!doctype html>
 <?php
 session_start();
-session_destroy();
-session_start();
 if(isset($_GET['register'])) {
 	$benutzername=$_POST["benutzername"];
 	$passwort=$_POST["passwort"];
@@ -37,6 +35,7 @@ exit;
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="quizsheet.css">
 	<title> Quiz </title>
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
 
 
 	</head>

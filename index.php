@@ -22,7 +22,7 @@ if($result -> num_rows!==0){ //-> Anmeldedaten ghören zu Benutzer
 exit;
 }
 else{
-echo ' <dialog open>Dieses Passwort ist leider falsch </br> <a href="index.php">erneut Versuchen</a> </dialog> ';
+echo  ' <dialog open>Dieses Passwort ist leider falsch </br> <a href="index.php">erneut Versuchen</a> </dialog> ';
 	//header('Location: index.php');
 exit;
 }
@@ -56,7 +56,7 @@ exit;
 			</tr>
 			<tr>
 				<th>Registrieren</th>
-				<th>www.luo-darmstadt.de</th>
+				<th><button><a type="button" class="button" href="registrieren.php">Registrieren</a></button></th>
 			</tr>
 		</table>
 

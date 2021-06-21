@@ -5,6 +5,14 @@ if(!isset($_SESSION['aktueller_benutzer'])) {
 }
 $user = $_SESSION['aktueller_benutzer'];
 $connection = new mysqli("localhost", "root", "", "quiz");
+if(isset($_GET['selected'])){
+echo $_GET['selected'];
+	$profil=$_GET['selected'];
+}else{
+	$profil=$user;
+}
+
+
 ?>
 
 <!doctype html>
@@ -17,11 +25,9 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 	</head>
 	
 	<body>
-	<h1>Quizlein</h1>
-	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
 		<table>
 			<tr>
-				
+				<td><h1>Quizlein</h1> </td>
 				<td><button id=profil><a href="profil.php"><?php echo $user ?></a></button></td>
 			</tr>
 		</table>
@@ -32,19 +38,18 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 			<button><a type="button" class="button" href="spielerliste.php">Spielerliste</a></button>
 			<button><a type="button" class="button" href="verwaltung.php">Verwaltung</a></button>
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
-			<button><a type="button" class="button">Abmelden</a></button>
+			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
 		<table>
 			<tr>
-			</br></br></br></br>
-				<td>Name: ...........................</td> 
-				<td><?php echo $user ?></td> <!-- Benutzername wird ausgegeben --> 
+				<td>Name: ...........................</td>
+				<td><?php echo $profil ?></td> <!-- Benutzername wird ausgegeben --> 
 			</tr>	
 			<tr>
-				<td>Platzierung:</br> ..................</td>
+				<td>Platzierung: ..................</td>
 				<td>
 					<?php //Platzierung wird ermittelt
-						$sql="SELECT Count(Benutzername)+1 FROM benutzer WHERE punkte>(SELECT Punkte from benutzer where Benutzername='$user')";
+						$sql="SELECT Count(Benutzername)+1 FROM benutzer WHERE punkte>(SELECT Punkte from benutzer where Benutzername='$profil')";
 						$result=$connection->query($sql);
 						$row = mysqli_fetch_array($result);//Platzierung wird ausgegeben
 							echo $row['Count(Benutzername)+1'];
@@ -53,10 +58,10 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Punkte: ...........................</td>
+				<td>Punkte: .........................</td>
 				<td>
 					<?php //Punkte werden ermittelt
-						$sql="SELECT Punkte FROM benutzer WHERE Benutzername='$user'";
+						$sql="SELECT Punkte FROM benutzer WHERE Benutzername='$profil'";
 						$result=$connection->query($sql);
 						$row = mysqli_fetch_array($result);//Punkte werden ausgegeben
 							echo $row['Punkte'];
@@ -65,19 +70,19 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Beste Punkte: ..................</td>
+				<td>Beste Punkte: ...............</td>
 				<td>
 					test 1
 				<!--Hier kommt noch was-->
 				</td>
 			</tr>
 			<tr>
-				<td>Rechte: ...........................</td>
+				<td>Rechte: .........................</td>
 				<td>
 					<?php 
-						$sql="SELECT Benutzername FROM admin WHERE Benutzername='$user'";
+						$sql="SELECT Benutzername FROM admin WHERE Benutzername='$profil'";
 						$result=$connection->query($sql);
-						$sql2="SELECT Benutzername FROM moderator WHERE Benutzername='$user'";
+						$sql2="SELECT Benutzername FROM moderator WHERE Benutzername='$profil'";
 						$result2=$connection->query($sql2);
 						if($result2 -> num_rows!==0){//Prüfen ob Benutzer Admin ist
 							echo "Admin";
@@ -92,10 +97,10 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Erstellte Fragen: ..................</td>
+				<td>Erstellte Fragen: ...........</td>
 				<td>
 					<?php //Fragenanzahl wird ermittelt
-						$sql="SELECT Count(Inhalt) FROM frage WHERE Benutzername='$user'";
+						$sql="SELECT Count(Inhalt) FROM frage WHERE Benutzername='$profil'";
 						$result=$connection->query($sql);
 						$row = mysqli_fetch_array($result);//Fragenanzahl wird ausgegeben
 							echo $row['Count(Inhalt)'];
@@ -103,7 +108,7 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 				</td>
 			</tr>
 			<tr>
-				<td>Beliebteste Frage: </td>
+				<td>Beliebteste Frage: .........</td>
 				<td>
 					test 2
 				<!--Hier kommt noch was-->

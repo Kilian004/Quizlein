@@ -29,7 +29,7 @@ $user = $_SESSION['aktueller_benutzer'];
 			<button><a type="button" class="button" href="spielerliste.php">Spielerliste</a></button>
 			<button><a type="button" class="button" href="verwaltung.php">Verwaltung</a></button>
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
-			<button><a type="button" class="button">Abmelden</a></button>
+			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
 	</body>
 	

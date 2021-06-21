@@ -4,7 +4,7 @@ if(isset($_GET['abgegeben'])) {
 	$benutzername=$_POST["benutzername"];
 	$passwort=$_POST["passwort"];
 	$passwort2=$_POST["passwort2"];
-	if($benutzername==0 || $passwort==0 || $passwort2==0){
+	if($benutzername==null || $passwort==null || $passwort2==null){
 		echo '<dialog open>Bitte gib vollständige Daten an</br> <a href="registrieren.php">ja</a> </dialog>';
 	}else{
 	$connection = new mysqli("localhost", "root", "", "quiz");
@@ -15,7 +15,7 @@ if(isset($_GET['abgegeben'])) {
 		//Sessiondaten speichern und weiterleiten
 		$_SESSION['aktueller_benutzer'] = $benutzername; 
 		$_SESSION['rank']="schrott";
-		header('Location: index.php');
+		header('Location: startseite.php');
 	}else{
 		echo '<dialog open>bist du ernsthaft nicht in der Lage, </br> dein Passwort zu wiederholen? </br> <a href="registrieren.php">erneut Versuchen</a> </dialog>';
 	}

@@ -24,13 +24,13 @@ $connection = new mysqli("localhost", "root", "", "quiz");
 			</tr>
 		</table>
 		<div id=startLinks>
-			<button><a href="startseite.php">Startseite</a></button>
-			<button><a href="fragenset.php">Fragenset</a></button>
-			<button><a href="eigene_fragen.php">Eigene Fragen</a></button>
-			<button><a href="spielerliste.php">Spielerliste</a></button>
-			<button><a href="verwaltung.php">Verwaltung</a></button>
-			<button><a href="hilfe.php">Hilfe</a></button>
-			<button>Abmelden</button>
+			<button><a type="button" class="button" href="startseite.php">Startseite</a></button>
+			<button><a type="button" class="button" href="fragenset.php">Fragen beantworten</a></button>
+			<button><a type="button" class="button" href="eigene_fragen.php">Eigene Fragen</a></button>
+			<button><a type="button" class="button" href="spielerliste.php">Spielerliste</a></button>
+			<button><a type="button" class="button" href="verwaltung.php">Verwaltung</a></button>
+			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
+			<button><a type="button" class="button">Abmelden</a></button>
 		</div>
 		<table>
 			<tr>

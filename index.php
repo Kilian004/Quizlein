@@ -1,6 +1,8 @@
 <!doctype html>
 <?php
 session_start();
+session_destroy();
+session_start();
 if(isset($_GET['register'])) {
 	$benutzername=$_POST["benutzername"];
 	$passwort=$_POST["passwort"];

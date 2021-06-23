@@ -2,7 +2,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background-color: #ff6961  ;
-	background-image: url("question-mark.jpg"); 
+	background-image: url("question-mark.jpg");
     background-repeat: repeat-x;
     font-family: arial ;
     font-size: 20px ;
@@ -11,8 +11,8 @@ body{
 }
 h1{ color: white ;
     font-size: 50px ;
-	text-align: center;	
-}	
+	text-align: center;
+}
 
 .button {
   background-color: #ff6961;
@@ -25,11 +25,11 @@ h1{ color: white ;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  
+
 }
 circle-button{
 	position: absolute;
-    left: 1100px;
+    right: 100px;
     top: 50px;
     display:block;
     width:80px;
@@ -50,7 +50,7 @@ circle-button{
 td{
 	color: white;
 	text-align: center;
-	
+
 }
 h2{
 	font-size:40px;
@@ -63,8 +63,5 @@ h3{
 
 .echo {
 	background: red;
-	
+
 }
-
-
-

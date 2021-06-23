@@ -13,15 +13,10 @@ $user = $_SESSION['aktueller_benutzer'];
 		<link rel="stylesheet" href="quizsheet.css">
 		<title>Fragenset</title>
 	</head>
-	
+
 	<body>
 	<h1>Quizlein</h1>
-	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" >Profil</a></circle-button>
-		<table>
-			<tr>
-				
-				<td><button id=profil><a href="profil.php"><?php echo $user ?></a></button></td><!-- Benutzername wird ausgegeben --> 
-			</tr>
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" ><?php echo $user ?></a></circle-button>
 		</table>
 		<div id=startLinks>
 			<button><a type="button" class="button" href="startseite.php">Startseite</a></button>
@@ -33,5 +28,5 @@ $user = $_SESSION['aktueller_benutzer'];
 			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
 	</body>
-	
+
 </html>

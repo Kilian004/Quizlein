@@ -230,12 +230,21 @@ CREATE TABLE `richtig` (
 --
 -- Indizes der exportierten Tabellen
 --
-
+ 
 --
 -- Indizes für die Tabelle `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`Benutzername`);
+
+ALTER TABLE `frage`
+  ADD PRIMARY KEY (`IDFrage`),
+  ADD KEY `IDKategorie` (`IDKategorie`),
+  ADD KEY `Benutzername` (`Benutzername`);
+
+ALTER TABLE `frage`
+  MODIFY `IDFrage` int(11) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- Indizes für die Tabelle `antwort`
@@ -269,10 +278,6 @@ ALTER TABLE `falsch`
 --
 -- Indizes für die Tabelle `frage`
 --
-ALTER TABLE `frage`
-  ADD PRIMARY KEY (`IDFrage`),
-  ADD KEY `IDKategorie` (`IDKategorie`),
-  ADD KEY `Benutzername` (`Benutzername`);
 
 --
 -- Indizes für die Tabelle `fragenset`
@@ -364,8 +369,7 @@ ALTER TABLE `richtig`
   ADD CONSTRAINT `richtig_ibfk_1` FOREIGN KEY (`IDFrage`) REFERENCES `frage` (`IDFrage`);
   
   
- ALTER TABLE `frage`
-  MODIFY `IDFrage` int(11) NOT NULL AUTO_INCREMENT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

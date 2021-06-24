@@ -1,4 +1,10 @@
 <!doctype html>
+
+<html lang="de">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="quiz.css">
+	<title> Quiz </title>
 <?php
 session_start();
 if(isset($_GET['register'])) {
@@ -29,12 +35,7 @@ exit;
 }
 ?>
 
-<!doctype html>
-<html lang="de">
-	<head>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
-	<title> Quiz </title>
+
 
 	</head>
 	<body>
@@ -42,20 +43,16 @@ exit;
 		<form action="?register=1" method="post">
 		<table>
 			<tr>
-				<th>Benutzername</th>
-				<th><input name="benutzername"></th>
+				<td>Benutzername</td>
+				<td><input name="benutzername"></td>
 			</tr>
-				<th>Passwort</th>
-				<th><input name="passwort"></th>
+				<td>Passwort</td>
+				<td><input name="passwort" type="passwort"></td>
 			</tr>
 			<tr>
-				<th><input type="reset"></th>
-				<th><input type="submit" value="Bestätigen" ></th>
+				<td><a type="button" class="button" href="registrieren.php">Registrieren</a></td>
+				<td><input type="submit" value="Bestätigen" type="button" class="button"></td>
 				</form>
-			</tr>
-			<tr>
-				<th>Registrieren</th>
-				<th><button><a type="button" class="button" href="registrieren.php">Registrieren</a></button></th>
 			</tr>
 		</table>
 

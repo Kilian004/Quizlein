@@ -1,4 +1,10 @@
-
+<!doctype html>
+	<html lang="de">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="quiz.css">
+		<title>Fragenset</title>
+		
 <?php
 session_start();
 if(!isset($_SESSION['aktueller_benutzer'])) {
@@ -14,8 +20,9 @@ if(!isset($_SESSION['rand'])){
 }
 if(isset($_GET['kontrolle'])){
 	if(!isset($_POST['a'])&&!isset($_POST['b'])&&!isset($_POST['c'])&&!isset($_POST['d'])){
-		echo  ' <dialog open>Keine antwort ausgewählt </br> <a href="fragenset.php">erneut Versuchen</a> </dialog> ';
+		echo  ' <dialog open>Keine Antwort ausgewählt </dialog> ';
 	}
+	else{
 		$sql="SELECT Richtig FROM antwort WHERE IDFrage='".$_SESSION['rand']."' AND Buchstabe='A'";
 		$result=$connection->query($sql);
 		$row = mysqli_fetch_array($result);
@@ -112,6 +119,7 @@ if(isset($_GET['kontrolle'])){
 			$_SESSION['rand'] =$rand=rand(1,$row['Count(Inhalt)']);//Zufällige Frage wird gewählt
 			echo  ' <dialog open>FALSCH! </dialog> ';
 		}
+	}
 		
 }
 
@@ -119,22 +127,12 @@ if(isset($_GET['kontrolle'])){
 
 ?>
 
-<!doctype html>
-	<html lang="de">
-	<head>
-		<meta charset="utf-8"/>
-		<!--<link rel="stylesheet" href="quizsheet.css">-->
-		<title>Fragenset</title>
+
 	</head>
 	
 	<body>
 	<h1>Quizlein</h1>
-		<table>
-			<tr>
-				
-				<td><button id=profil><a href="profil.php"><?php echo $user ?></a></button></td><!-- Benutzername wird ausgegeben --> 
-			</tr>
-		</table>
+	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" ><?php echo $user ?></a></circle-button>
 		<div id=startLinks>
 			<button><a type="button" class="button" href="startseite.php">Startseite</a></button>
 			<button><a type="button" class="button" href="fragenset.php">Fragen beantworten</a></button>
@@ -144,6 +142,11 @@ if(isset($_GET['kontrolle'])){
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
 			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
+		</br>
+		</br>
+		</br>
+		
+		
 		<table>
 		<form action="?kontrolle=1" method="post">
 			<tr>
@@ -209,11 +212,12 @@ if(isset($_GET['kontrolle'])){
 				<td><input type="checkbox" name="d" value="R"></td>
 			</tr>
 			<tr>
-				<td></td>
-				<td><input type="submit" value="Bestätigen"></td>
+				<td><input type="reset" class="button" value="Reset"></td>
+				<td><input type="submit" class="button" value="Bestätigen"></td>
 			</tr>
 			</form>
 		</table>
+		
 	</body>
 	
 </html>

@@ -17,7 +17,7 @@ $result1=$connection->query("SELECT Benutzername,Punkte FROM benutzer order by P
 	<html lang="de">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 		<title>Spielerliste</title>
 	</head>
 
@@ -34,10 +34,12 @@ $result1=$connection->query("SELECT Benutzername,Punkte FROM benutzer order by P
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
 			<button><a type="button" class="button" href="index.php">Abmelden<a/></button>
 		</div>
-
+		</br>
+		</br>
+		</br>
 		<form action="profil.php" method="GET" >
 
-			<select name="selected" size="5">
+			<select name="selected" size="5" class="list">
 				<?php
 
 				foreach ($daten as $akt) {
@@ -47,7 +49,8 @@ $result1=$connection->query("SELECT Benutzername,Punkte FROM benutzer order by P
 				}
 				?>
 			</select>
-			<th><input type="submit" value="Bestätigen" ></th>
+			</br>
+			<th><input type="submit" class="button" value="Bestätigen" ></th>
 		</form>
 
 

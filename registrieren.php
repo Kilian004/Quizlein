@@ -27,7 +27,7 @@ if(isset($_GET['abgegeben'])) {
 <html lang="de">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 	<title> Quiz </title>
 
 
@@ -50,7 +50,7 @@ if(isset($_GET['abgegeben'])) {
 			</tr>
 			<tr>
 				<th><input type="reset"></th>
-				<th><input type="submit" value="Bestätigen" ></th>
+				<th><input type="submit" class="button" value="Bestätigen" ></th>
 				</form>
 			</tr>
 		</table>

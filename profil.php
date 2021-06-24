@@ -20,7 +20,7 @@ echo $_GET['selected'];
 	
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 		<title>Profil</title>
 	</head>
 	
@@ -28,7 +28,8 @@ echo $_GET['selected'];
 		<table>
 			<tr>
 				<td><h1>Quizlein</h1> </td>
-				<td><button id=profil><a href="profil.php"><?php echo $user ?></a></button></td>
+				<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" ><?php echo $user ?></a></circle-button>
+				
 			</tr>
 		</table>
 		<div id=startLinks>
@@ -40,6 +41,9 @@ echo $_GET['selected'];
 			<button><a type="button" class="button" href="hilfe.php">Hilfe</a></button>
 			<button><a type="button" class="button" href="index.php">Abmelden</a></button>
 		</div>
+		</br>
+		</br>
+		</br>
 		<table>
 			<tr>
 				<td>Name: ...........................</td>
@@ -72,17 +76,22 @@ echo $_GET['selected'];
 			<tr>
 				<td>Beste Punkte: ...............</td>
 				<td>
-					test 1
-				<!--Hier kommt noch was-->
+					<?php //Punkte werden ermittelt
+						$sql="SELECT Rekord FROM benutzer WHERE Benutzername='".$profil."'";
+						$result=$connection->query($sql);
+						$row = mysqli_fetch_array($result);//Punkte werden ausgegeben
+							echo $row['Rekord'];
+						
+					?>
 				</td>
 			</tr>
 			<tr>
 				<td>Rechte: .........................</td>
 				<td>
 					<?php 
-						$sql="SELECT Benutzername FROM admin WHERE Benutzername='$profil'";
+						$sql="SELECT Benutzername FROM admin WHERE Benutzername='".$profil."'";
 						$result=$connection->query($sql);
-						$sql2="SELECT Benutzername FROM moderator WHERE Benutzername='$profil'";
+						$sql2="SELECT Benutzername FROM moderator WHERE Benutzername='".$profil."'";
 						$result2=$connection->query($sql2);
 						if($result2 -> num_rows!==0){//Prüfen ob Benutzer Admin ist
 							echo "Admin";
@@ -100,7 +109,7 @@ echo $_GET['selected'];
 				<td>Erstellte Fragen: ...........</td>
 				<td>
 					<?php //Fragenanzahl wird ermittelt
-						$sql="SELECT Count(Inhalt) FROM frage WHERE Benutzername='$profil'";
+						$sql="SELECT Count(Inhalt) FROM frage WHERE Benutzername='".$profil."'";
 						$result=$connection->query($sql);
 						$row = mysqli_fetch_array($result);//Fragenanzahl wird ausgegeben
 							echo $row['Count(Inhalt)'];
@@ -110,8 +119,13 @@ echo $_GET['selected'];
 			<tr>
 				<td>Beliebteste Frage: .........</td>
 				<td>
-					test 2
-				<!--Hier kommt noch was-->
+					<?php //Punkte werden ermittelt
+						$sql="SELECT Inhalt FROM frage WHERE Benutzername='".$profil."' AND Bewertung=(SELECT max(Bewertung) FROM frage WHERE Benutzername='".$profil."' )";
+						$result=$connection->query($sql);
+						$row = mysqli_fetch_array($result);//Punkte werden ausgegeben
+							echo $row['Inhalt'];
+						
+					?>
 				</td>
 			</tr>
 		</table>

@@ -11,18 +11,12 @@ $user = $_SESSION['aktueller_benutzer'];//Name des angemeldeten Benutzers wird g
 <html lang="de">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 		<title> Quiz Startseite </title>
 	</head>
 	<body>
 	<h1>Quizlein</h1>
 	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white" ><?php echo $user ?></a></circle-button>
-	<!- Passender Hintergrund
-		Überschrift in die Mitte / Passende Frabe
-		Passende FrabePassende Schriftfarbe
-		Buttons gleich groß
-		Buttons größer
-		-> 
 		<div id=startLinks>
 			<button><a type="button" class="button" href="startseite.php">Startseite</a></button>
 			<button><a type="button" class="button" href="fragenset.php">Fragen beantworten</a></button>

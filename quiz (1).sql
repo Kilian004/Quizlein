@@ -135,7 +135,7 @@ CREATE TABLE `falsch` (
 --
 
 CREATE TABLE `frage` (
-  `IDFrage` int(11) NOT NULL,
+  `IDFrage` int(11) NOT NULL AUTO_INCREMENT,
   `Inhalt` varchar(1000) NOT NULL,
   `Benutzername` varchar(32) NOT NULL,
   `IDKategorie` int(11) NOT NULL,

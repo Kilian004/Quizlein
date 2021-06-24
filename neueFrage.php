@@ -8,13 +8,53 @@ $user = $_SESSION['aktueller_benutzer'];
 
 $connection = new mysqli("localhost", "root", "", "quiz");
 
-if(isset($_GET['register'])) {
+if(isset($_GET['aktion'])) {
   $frage=$_POST["frage"];
   $kategorien=$_POST["kategorien"];
-  $x=$connection->query("select count(*)+1 as yx from frage")->fetch_object()->yx;
-	$sql="INSERT INTO `frage` (`IDFrage`, `Inhalt`, `Benutzername`, `IDKategorie`, `Bewertung`) VALUES ('".$x."','".$frage."','".$user."','".$kategorien."','0' )"; //frage eintragen
-  echo $sql;
+	$sql="INSERT INTO `frage` (`IDFrage`, `Inhalt`, `Benutzername`, `IDKategorie`, `Bewertung`) VALUES ('','".$frage."','".$user."','".$kategorien."','0' )"; //frage eintragen
   $connection->query($sql);
+  $idFrage=$connection->query("select IDFrage as yx from frage where Inhalt='".$frage."'")->fetch_object()->yx;
+
+
+  if(isset($_POST["anA"])){  //antwortfeld auslesen
+    $ant=$_POST["anA"];
+    if(isset($_POST["rA"])){ //checkbox auslesen
+      $richtig=1;
+    }else{
+      $richtig=0;
+    }
+    $connection->query("INSERT INTO `antwort` (`Buchstabe`, `IDFrage`, `InhaltAntwort`, `Richtig`) VALUES ('A', '".$idFrage."', '".$ant."', '".$richtig."')");
+  }
+
+  if(isset($_POST["anB"])){  //antwortfeld auslesen
+    $ant=$_POST["anB"];
+    if(isset($_POST["rB"])){ //checkbox auslesen
+      $richtig=1;
+    }else{
+      $richtig=0;
+    }
+    $connection->query("INSERT INTO `antwort` (`Buchstabe`, `IDFrage`, `InhaltAntwort`, `Richtig`) VALUES ('B', '".$idFrage."', '".$ant."', '".$richtig."')");
+  }
+
+  if(isset($_POST["anC"])){  //antwortfeld auslesen
+    $ant=$_POST["anC"];
+    if(isset($_POST["rC"])){ //checkbox auslesen
+      $richtig=1;
+    }else{
+      $richtig=0;
+    }
+    $connection->query("INSERT INTO `antwort` (`Buchstabe`, `IDFrage`, `InhaltAntwort`, `Richtig`) VALUES ('C', '".$idFrage."', '".$ant."', '".$richtig."')");
+  }
+
+  if(isset($_POST["anD"])){  //antwortfeld auslesen
+    $ant=$_POST["anD"];
+    if(isset($_POST["rD"])){ //checkbox auslesen
+      $richtig=1;
+    }else{
+      $richtig=0;
+    }
+    $connection->query("INSERT INTO `antwort` (`Buchstabe`, `IDFrage`, `InhaltAntwort`, `Richtig`) VALUES ('D', '".$idFrage."', '".$ant."', '".$richtig."')");
+  }
 }
 ?>
 
@@ -28,14 +68,15 @@ if(isset($_GET['register'])) {
 	</head>
 	<body>
 		<h1> Frage erstellen </h1>
-		<form action="?register=1" method="post" id="xy">
+		<form action="?aktion=1" method="post" id="xy">
 		<table>
 			<tr>
 				<th>Frage</th>
-				<th><input name="frage"></th>
+				<td><input name="frage"></td>
 			</tr>
+      <tr>
 				<th>Kategorie</th>
-				<th>
+				<td>
           <select id="kat" name="kategorien" form="xy"> <!--wird in post mitgeschickt-->
             <?php
             $result=$connection->query("SELECT * FROM kategorie");
@@ -48,11 +89,52 @@ if(isset($_GET['register'])) {
                   echo '<option value='.$id.'>'.$name.'</option>'; //dropdownliste "befüllen"
                 }
               ?>
-          </th>
+          </td>
 			</tr>
-			<tr>
-				<th><input type="reset" value="löschen"></th>
-				<th><input type="submit" class="button" value="Bestätigen" ></th>
+      <tr>
+        <td>
+          <th>&nbsp</th>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <th>Antwort</th>
+          <th>Inhalt</th>
+          <th>Richtig?</th>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <th>A:</th>
+  				<td><input name="anA"></td>
+          <td><input type="checkbox" value="rA"></td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <th>B:</th>
+          <td><input name="anB"></td>
+          <td><input type="checkbox" value="rB"></td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <th>C:</th>
+          <td><input name="anC"></td>
+          <td><input type="checkbox" value="rC"></td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <th>D:</th>
+          <td><input name="anD"></td>
+          <td><input type="checkbox" value="rD"></td>
+        </td>
+      </tr>
+  		<tr>
+				<th><input type="reset" value="reset"></th>
+				<th><input type="submit" class="button" value="Frage hinzufügen" ></th>
+        <th><a type="button" href="eigene_fragen.php">Zurück</a></th>
 				</form>
 			</tr>
 

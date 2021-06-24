@@ -47,12 +47,12 @@ $result1=$connection->query("SELECT Inhalt,Bezeichnung,Bewertung FROM frage natu
           <td>&nbsp</td> <!--leere Zeile-->
       </tr>
       <tr>
-        <td>Frage</td>
-        <td>Kategorie</td>
-        <td>Beliebtheit</td>
+        <th>Frage</td>
+        <th>Kategorie</td>
+        <th>Beliebtheit</td>
       </tr>
       <?php
-
+      if($result1->num_rows!==0){
       foreach ($daten as $akt) {
       $inhalt = $akt->Inhalt;
       $kategorie = $akt->Bezeichnung;
@@ -64,6 +64,9 @@ $result1=$connection->query("SELECT Inhalt,Bezeichnung,Bewertung FROM frage natu
             </tr>'
             ;
       }
+    }else {
+      echo "noch keine erstellten Fragen";
+    }
       ?>
 
     </table>

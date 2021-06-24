@@ -16,14 +16,14 @@ $result1=$connection->query("SELECT Inhalt,Bezeichnung,Bewertung FROM frage natu
 	<html lang="de">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 		<title>Eigene Fragen</title>
 	</head>
 
 	<body>
 	<h1>Quizlein</h1>
 	<circle-button><a type="button" class="circle-button" href="profil.php" style="color:white;" ><?php echo $user ?></a></circle-button>
-		<div id=startLinks>
+		<div>
 			<button><a type="button" class="button" href="startseite.php">Startseite</a></button>
 			<button><a type="button" class="button" href="fragenset.php">Fragen beantworten</a></button>
 			<button><a type="button" class="button" href="eigene_fragen.php">Eigene Fragen</a></button>
@@ -37,9 +37,9 @@ $result1=$connection->query("SELECT Inhalt,Bezeichnung,Bewertung FROM frage natu
 
  </br>
 
-    <table style="margin-left:auto; margin-right:auto;">
+    <table >
       <tr>
-        <td><button><a href="neueFrage.php">neue Frage erstellen</a></button> </td>
+        <td><a type="button" class="button" href="neueFrage.php">neue Frage erstellen</a> </td>
         <td></td>
         <td></td>
       </tr>

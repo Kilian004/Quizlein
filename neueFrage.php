@@ -62,7 +62,7 @@ if(isset($_GET['aktion'])) {
 <html lang="de">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 	<title> Quiz </title>
 
 	</head>
@@ -77,7 +77,8 @@ if(isset($_GET['aktion'])) {
       <tr>
 				<th>Kategorie</th>
 				<td>
-          <select id="kat" name="kategorien" form="xy"> <!--wird in post mitgeschickt-->
+				<div id="katlist">
+          <select  id="kat" name="kategorien" form="xy"> <!--wird in post mitgeschickt-->
             <?php
             $result=$connection->query("SELECT * FROM kategorie");
              while ($datensatz =$result->fetch_object()) {
@@ -89,6 +90,7 @@ if(isset($_GET['aktion'])) {
                   echo '<option value='.$id.'>'.$name.'</option>'; //dropdownliste "befüllen"
                 }
               ?>
+			  </div>
           </td>
 			</tr>
       <tr>
@@ -132,9 +134,9 @@ if(isset($_GET['aktion'])) {
         </td>
       </tr>
   		<tr>
-				<th><input type="reset" value="reset"></th>
+				<th><input type="reset" class="button" value="reset"></th>
 				<th><input type="submit" class="button" value="Frage hinzufügen" ></th>
-        <th><a type="button" href="eigene_fragen.php">Zurück</a></th>
+        <th><a type="button" class="button" href="eigene_fragen.php">Zurück</a></th>
 				</form>
 			</tr>
 

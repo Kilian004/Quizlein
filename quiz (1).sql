@@ -135,7 +135,7 @@ CREATE TABLE `falsch` (
 --
 
 CREATE TABLE `frage` (
-  `IDFrage` int(11) NOT NULL AUTO_INCREMENT,
+  `IDFrage` int(11) NOT NULL,
   `Inhalt` varchar(1000) NOT NULL,
   `Benutzername` varchar(32) NOT NULL,
   `IDKategorie` int(11) NOT NULL,
@@ -362,6 +362,10 @@ ALTER TABLE `moderator`
 --
 ALTER TABLE `richtig`
   ADD CONSTRAINT `richtig_ibfk_1` FOREIGN KEY (`IDFrage`) REFERENCES `frage` (`IDFrage`);
+  
+  
+ ALTER TABLE `frage`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -19,5 +19,18 @@ header('Location: keineRechte.php'); //weiterleiten auf KeineRechte
 		<title> Verwaltung </title>
 	</head>
 	<body>
+	<h1> Verwaltung </h1>
+	<form action="befoerdern1.php">
+	<input type="submit" class="button" value="Benutzer Befördern" ></th>
+	</form>
+	<form action="loeschen.php">
+	<input type="submit" class="button" value="Benutzer löschen" ></th>
+	</form>
+	<form action="degradieren.php">
+	<input type="submit" class="button" value="Benutzer degradieren" ></th>
+	</form>
+	<form action="frageLoeschen.php">
+	<input type="submit" class="button" value="Frage löschen" ></th>
+	</form>
 	</body
  </html>

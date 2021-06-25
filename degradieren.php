@@ -34,27 +34,29 @@ if ($rang!=="god"){
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<link rel="stylesheet" href="quizsheet.css">
+<link rel="stylesheet" href="quiz.css">
 <title>Benutzer degradieren</title>
 </head>
 <body>
+<center>
 <h1> Benutzer degradieren </h1>
 
 <h2> Bitte trage die Daten ein: </h2>
 <form action="?eingegeben=1" method="post">
 	<table>
 	  <tr><td>Benutzername: </td>
-			<td> <input name="benutzername"></td></tr>
+			<td> <input class="list" name="benutzername"></td></tr>
 			
 	  <tr><td>Passwort: </td>
-			<td> <input name="passwort"></td></tr>
+			<td> <input class="list" name="passwort"></td></tr>
 			
 	  <tr><td>Zu degradierender Nutzer: </td>
-			<td> <input name="benutzernameDegradierter"></td></tr>
+			<td> <input class="list" name="benutzernameDegradierter"></td></tr>
 			
 		<tr><td></td>
-		  <tr><td><input type="submit"></td></tr>     
+		  <tr><td><input class="button" type="submit"></td></tr>     
 	</table>
 	</form>
+	</center>
 </body>
 </html>

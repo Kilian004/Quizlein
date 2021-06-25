@@ -15,11 +15,12 @@ header('Location: keineRechte.php'); //weiterleiten auf KeineRechte
 <html lang="de">
 	<head>
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="quizsheet.css">
+		<link rel="stylesheet" href="quiz.css">
 		<title> Verwaltung </title>
 	</head>
 	<body>
 	<h1> Verwaltung </h1>
+	<h3> Wähle eine Interaktion aus: </h3>
 	<form action="befoerdern1.php">
 	<input type="submit" class="button" value="Benutzer Befördern" ></th>
 	</form>
@@ -32,5 +33,5 @@ header('Location: keineRechte.php'); //weiterleiten auf KeineRechte
 	<form action="frageLoeschen.php">
 	<input type="submit" class="button" value="Frage löschen" ></th>
 	</form>
-	</body
+	</body>
  </html>

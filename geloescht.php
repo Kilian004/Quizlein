@@ -6,13 +6,15 @@
 
 </head>
 <body>
+<center>
   <h1>Benutzer löschen</h1>
     <p> Benutzer wurde erfolgreich gelöscht </p>
   
 	
 	<hr/>
-	<link rel="stylesheet" href="quizsheet.css">
-	<p> <a href="loeschen.php"> Zurück zur Eingabe</a></p>
-	<p> <a href="startseite.php"> Zurück zur Startseite</a></p>
+	<link rel="stylesheet" href="quiz.css">
+	<p> <a class="button" href="loeschen.php"> Zurück zur Eingabe</a></p>
+	<p> <a class="button" href="startseite.php"> Zurück zur Startseite</a></p>
+	</center>
 	</body>
 	</html>

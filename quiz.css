@@ -46,7 +46,7 @@ circle-button{
 	background-width:10%;
 	background-height: auto;
     box-shadow: 0 0 3px gray;
-    font-size:20px;
+    font-size:auto;
     font-weight:bold;
 }
 td{

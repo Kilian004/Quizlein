@@ -26,7 +26,7 @@ if ($rang!=="god"){
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<link rel="stylesheet" href="quizsheet.css">
+<link rel="stylesheet" href="quiz.css">
 <form action="frageLoeschen2.php" method="GET" >
 
 			<select name="selected" size="5" class="list">

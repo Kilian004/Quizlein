@@ -32,15 +32,17 @@ $idf = $_GET['selected'];
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<link rel="stylesheet" href="quizsheet.css">
+<link rel="stylesheet" href="quiz.css">
 <title>Frage löschen</title>
 </head>
 <body>
+<center>
 <h1> Frage löschen </h1>
 
 <h2> Bist du dir sicher, dass du diese Frage löschen willst? </h2>
 <form action="?eingegeben=<?php echo $idf ?>" method="post">
-	<input type="submit" value="ja!">
+	<input class="button" type="submit" value="ja!">
 	</form>
+	</center>
 </body>
 </html>

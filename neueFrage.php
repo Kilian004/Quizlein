@@ -72,13 +72,13 @@ if(isset($_GET['aktion'])) {
 		<table>
 			<tr>
 				<th>Frage</th>
-				<td><input name="frage"></td>
+				<td><input name="frage" class="list"></td>
 			</tr>
       <tr>
 				<th>Kategorie</th>
 				<td>
 				<div id="katlist">
-          <select  id="kat" name="kategorien" form="xy"> <!--wird in post mitgeschickt-->
+          <select  id="kat" name="kategorien" form="xy" class="list"> <!--wird in post mitgeschickt-->
             <?php
             $result=$connection->query("SELECT * FROM kategorie");
              while ($datensatz =$result->fetch_object()) {
@@ -108,32 +108,33 @@ if(isset($_GET['aktion'])) {
       <tr>
         <td>
           <th>A:</th>
-  				<td><input name="anA"></td>
+  				<td><input class="list" name="anA"></td>
           <td><input type="checkbox" value="rA"></td>
         </td>
       </tr>
       <tr>
         <td>
           <th>B:</th>
-          <td><input name="anB"></td>
+          <td><input class="list" name="anB"></td>
           <td><input type="checkbox" value="rB"></td>
         </td>
       </tr>
       <tr>
         <td>
           <th>C:</th>
-          <td><input name="anC"></td>
+          <td><input class="list" name="anC"></td>
           <td><input type="checkbox" value="rC"></td>
         </td>
       </tr>
       <tr>
         <td>
           <th>D:</th>
-          <td><input name="anD"></td>
+          <td><input class="list" name="anD"></td>
           <td><input type="checkbox" value="rD"></td>
         </td>
       </tr>
-  		<tr>
+	  
+  		<tr></br>
 				<th><input type="reset" class="button" value="reset"></th>
 				<th><input type="submit" class="button" value="Frage hinzufügen" ></th>
         <th><a type="button" class="button" href="eigene_fragen.php">Zurück</a></th>

@@ -44,10 +44,10 @@ exit;
 		<table>
 			<tr>
 				<td>Benutzername</td>
-				<td><input name="benutzername"></td>
+				<td><input class="list" name="benutzername"></td>
 			</tr>
 				<td>Passwort</td>
-				<td><input name="passwort" type="passwort"></td>
+				<td><input class="list" name="passwort" type="passwort"></td>
 			</tr>
 			<tr>
 				<td><a type="button" class="button" href="registrieren.php">Registrieren</a></td>

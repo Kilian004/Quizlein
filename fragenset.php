@@ -33,6 +33,14 @@ if(isset($_GET['kontrolle'])){
 		echo  ' <dialog open>Keine Antwort ausgewählt </dialog> ';
 	}
 	else{
+
+		if(isset($_POST['ja']) && !isset($_POST['nein'])){
+			$connection->query("UPDATE frage set Bewertung=(select Bewertung from frage where IDFrage='".$_SESSION['rand']."')+1 where IDFrage='".$_SESSION['rand']."'");
+		}
+		if(isset($_POST['nein']) && !isset($_POST['ja'])){
+			$connection->query("UPDATE frage set Bewertung=(select Bewertung from frage where IDFrage='".$_SESSION['rand']."')-1 where IDFrage='".$_SESSION['rand']."'");
+		}
+
 		$sql="SELECT Richtig FROM antwort WHERE IDFrage='".$_SESSION['rand']."' AND Buchstabe='A'";
 		$result=$connection->query($sql);
 		$row = mysqli_fetch_array($result);
@@ -218,6 +226,14 @@ if(isset($_GET['kontrolle'])){
 			<tr>
 				<td><input type="reset" class="button" value="Reset"></td>
 				<td><input type="submit" class="button" value="Bestätigen"></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Gefällt dir diese Frage?</td>
+				<td>ja<input type="checkbox" name="ja"></td>
+				<td>nö<input type="checkbox" name="nein"></td>
 			</tr>
 			</form>
 		</table>

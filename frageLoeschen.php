@@ -15,7 +15,7 @@ $result1=$connection->query("SELECT Inhalt,IDFrage FROM frage");
  while ($datensatz =$result1->fetch_object()) {
         $daten[] = $datensatz;
     }
-if ($rang!=="god"){
+if ($rang!=="mod"){
 	header('Location: keineRechte.php');
 }	
 

@@ -93,10 +93,10 @@ echo $_GET['selected'];
 						$result=$connection->query($sql);
 						$sql2="SELECT Benutzername FROM moderator WHERE Benutzername='".$profil."'";
 						$result2=$connection->query($sql2);
-						if($result2 -> num_rows!==0){//Prüfen ob Benutzer Admin ist
+						if($result -> num_rows!==0){//Prüfen ob Benutzer Admin ist
 							echo "Admin";
 						}
-						elseif($result -> num_rows!==0){//Prüfen ob Benutzer Moderator ist
+						elseif($result2 -> num_rows!==0){//Prüfen ob Benutzer Moderator ist
 							echo "Moderator";
 						}
 						else{

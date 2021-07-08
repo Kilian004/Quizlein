@@ -6,7 +6,7 @@ if(!isset($_SESSION['aktueller_benutzer'])) {
 }
 $user = $_SESSION['aktueller_benutzer'];
 $rang = $_SESSION['rank'];
-if ($rang!=="god"){
+if ($rang!=="mod"){
 	header('Location: keineRechte.php');
 }	
 	if(isset($_GET['eingegeben'])) { 
@@ -20,6 +20,12 @@ if ($rang!=="god"){
 	}
 	else{
 	$connection = new mysqli("localhost", "root", "", "quiz");
+	$result1=$connection->query("SELECT Benutzername from moderator WHERE Benutzername='".$benutzername."'");
+	
+		if(($_SESSION["rank"]!=="god")&&($result1->num_rows!==0)){
+			echo  ' <dialog open>Keine Rechte um diesen Benutzer zu löschen!</dialog> ';
+		}
+		else{
 	
 		$sql="DELETE FROM `antwort` WHERE `IDFrage` = (SELECT `IDFrage` FROM `frage` WHERE `frage`.`benutzername` = '$benutzernamegeloeschter')";
 		$result=$connection->query($sql);
@@ -29,6 +35,7 @@ if ($rang!=="god"){
 		$result=$connection->query($sql);
 		//Sessiondaten speichern und weiterleiten
 		header('Location: geloescht.php');
+		}
 	}
 	}
 
@@ -58,7 +65,8 @@ if ($rang!=="god"){
 			<td> <input class="list" name="benutzernamegeloeschter"></td></tr>
 			
 		<tr><td></td>
-		  <tr><td><input class="button" type="submit"></td></tr>     
+		  <td><input class="button" type="submit"></td></tr>
+		
 	</table>
 	</form>
 	</center>

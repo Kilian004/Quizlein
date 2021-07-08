@@ -8,12 +8,16 @@ if(isset($_GET['abgegeben'])) {
 		echo '<dialog open>Bitte gib vollständige Daten an</br> <a href="registrieren.php">ja</a> </dialog>';
 	}else{
 	$connection = new mysqli("localhost", "root", "", "quiz");
-	
+	$sql="SELECT Benutzername FROM benutzer where Benutzername= '$benutzername'"; //prüfen ob benutzer
+	$result=$connection->query($sql);
+	if($result -> num_rows!==0){
+		die('<dialog open>Sorry, aber der Benutzername ist bereits belegt</br> <a href="registrieren.php">bitte einen neuen aussuchen</a> </dialog>');
+	}
 	if($passwort==$passwort2){
 		$sql="INSERT INTO `benutzer` (`Benutzername`, `Passwort`, `Punkte`) VALUES('$benutzername', '$passwort', 0);"; //in Datenbank einfügen
 		$result=$connection->query($sql);
 		//Sessiondaten speichern und weiterleiten
-		$_SESSION['aktueller_benutzer'] = $benutzername; 
+		$_SESSION['aktueller_benutzer'] = $benutzername;
 		$_SESSION['rank']="schrott";
 		header('Location: startseite.php');
 	}else{
